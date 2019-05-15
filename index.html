@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Image Tools</title>
+  </head>
+  <body>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var src =
+          "https://youtrack.wbsrad.com.br:8080/_persistent/WhatsApp%20Image%202019-04-17%20at%2013.16.54.jpeg?file=7-236&c=false&updated=1555518060494";
+        window.imgTool = new ImageTools();
+        imgTool.init({
+          src: src,
+          saveCb: src => {
+            console.info(src);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
