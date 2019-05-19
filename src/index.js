@@ -1,23 +1,12 @@
-import "./scss/style.scss";
-import { library, dom } from "@fortawesome/fontawesome-svg-core";
-import {
-  faUndoAlt,
-  faRedoAlt,
-  faPencilAlt,
-  faICursor,
-  faPlus,
-  faTrashAlt,
-  faSave
-} from "@fortawesome/free-solid-svg-icons/";
-import ImageTools from "./lib/imageTools";
+import { initUI } from "./lib/ui";
+import ImageTools from "./lib/ImageTools";
 
-library.add(faUndoAlt);
-library.add(faRedoAlt);
-library.add(faPencilAlt);
-library.add(faICursor);
-library.add(faPlus);
-library.add(faTrashAlt);
-library.add(faSave);
-dom.watch();
+function init() {
+  //Create the UI
+  let { elModal, elCanvas } = initUI();
 
-export default ImageTools;
+  //Instantiate a new ImageTools with the UI created
+  return new ImageTools(elModal, elCanvas);
+}
+
+export default init();

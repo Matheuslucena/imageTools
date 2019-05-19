@@ -3,9 +3,9 @@ const webpack = require("webpack");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 const uglifyJsPlugin = require("uglifyjs-webpack-plugin");
 module.exports = {
-  entry: "./src/index.js",
+  entry: ["babel-polyfill", "./src/index.js"],
   output: {
-    library: "ImageTools",
+    library: "imageTools",
     libraryTarget: "umd",
     libraryExport: "default",
     path: path.resolve(__dirname, "dist"),
